@@ -65,12 +65,11 @@
     </div>
     <div class="span3">
       <div class="well sidebar-nav">
-        <h3>Sidebar</h3>
+        <h3>Categories</h3>
         <ul class="nav nav-list">
-          <li class="nav-header">Sidebar</li>
-          <li><%= link_to "Link1", "/path1" %></li>
-          <li><%= link_to "Link2", "/path2" %></li>
-          <li><%= link_to "Link3", "/path3" %></li>
+          <% Category.all.each do |category| %>
+              <li><%= link_to category.name, category_path(category.id) %></li>
+          <% end %>
         </ul>
       </div>
       <!--/.well -->
@@ -80,7 +79,7 @@
   <!--/row-->
 
   <footer>
-    <p>&copy; Company 2013</p>
+    <p>&copy; Matt Maruri 2013</p>
   </footer>
 
 </div>
